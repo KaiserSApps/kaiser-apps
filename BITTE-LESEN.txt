@@ -1,0 +1,4 @@
+Kaiser – Apps: Lokale Website-Vorschau
+
+Doppelklicke auf index.html im selben Ordner.
+Dies ist ein Zwischenstand. Rechtstexte, Original-Logo und App-Screenshots müssen vor Veröffentlichung ergänzt werden.
