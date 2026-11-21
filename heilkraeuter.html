@@ -23,11 +23,14 @@ header .studio-brand{display:inline-flex;align-items:center;text-decoration:none
 header .studio-brand img{display:block;width:clamp(184px,23vw,245px);height:auto;max-width:100%}
 header nav{display:flex;flex-wrap:wrap;align-items:center;gap:14px}
 @media(max-width:550px){header{padding:14px 5%!important;gap:12px}header .studio-brand img{width:195px}header nav{gap:12px}header nav a{font-size:13px}}
+
+/* App-Logo im Titelbereich neben dem Text */
+.hero-inner{grid-template-columns:minmax(0,1.45fr) minmax(180px,.55fr);gap:42px}.hero .hero-app-logo{width:min(100%,225px);height:auto;aspect-ratio:1;object-fit:contain;border-radius:28px;box-shadow:0 22px 48px rgba(4,28,17,.28);justify-self:center}@media(max-width:760px){.hero-inner{grid-template-columns:1fr}.hero .hero-app-logo{grid-row:1;width:142px;justify-self:start}}
 </style>
 <link rel="stylesheet" href="assets/kaiser-studio-effects.css"></head><body>
 <header><a class="studio-brand" href="index.html" aria-label="Kaiser Studio – Startseite"><img src="assets/kaiser-studio-logo.svg" alt="Kaiser Studio" width="224" height="60"></a><nav aria-label="Hauptnavigation"><a href="index.html">Startseite</a><a href="apps.html">Unsere Apps</a><a href="impressum.html">Impressum</a></nav></header>
 <main>
-<section class="hero"><div class="hero-inner"><div><div class="eyebrow">Ein Projekt von Kaiser Studio</div><h1>Lexikon Heilkräuter</h1><div class="lead">Die faszinierende Welt der Heilpflanzen entdecken.</div><p>Ein übersichtliches Nachschlagewerk für alle, die sich für Kräuter, Pflanzenkunde und überlieferte Anwendungen interessieren. Entdecke Pflanzenporträts, botanische Namen, typische Zubereitungen und wichtige Vorsichtshinweise – direkt auf deinem Android-Smartphone.</p><span class="pill">Android-App · In Entwicklung</span> <span class="pill">0,99 € einmalig</span></div></div></section>
+<section class="hero"><div class="hero-inner"><div><div class="eyebrow">Ein Projekt von Kaiser Studio</div><h1>Lexikon Heilkräuter</h1><div class="lead">Die faszinierende Welt der Heilpflanzen entdecken.</div><p>Ein übersichtliches Nachschlagewerk für alle, die sich für Kräuter, Pflanzenkunde und überlieferte Anwendungen interessieren. Entdecke Pflanzenporträts, botanische Namen, typische Zubereitungen und wichtige Vorsichtshinweise – direkt auf deinem Android-Smartphone.</p><span class="pill">Android-App · In Entwicklung</span> <span class="pill">0,99 € einmalig</span></div><img class="hero-app-logo" src="assets/heilkraeuter-logo.png" alt="Lexikon Heilkräuter App-Logo" width="225" height="225"></div></section>
 <section class="content"><div class="eyebrow">Wissen über Pflanzen</div><h2>Botanisches Wissen, einfach zugänglich.</h2><p class="intro">Ob Kamille, Salbei oder Pfefferminze: Das Lexikon bündelt Informationen über Heilpflanzen an einem Ort. Neben Pflanzenprofilen lässt sich der Bestand über Suchbegriffe, Themenbereiche und Beschwerdebilder erschließen.</p>
 <div class="features">
 <article class="feature"><h3>137 Heilpflanzen</h3><p>Einträge mit deutschem und botanischem Namen, Pflanzenfamilie, verwendeten Pflanzenteilen und weiteren botanischen Informationen.</p></article>
