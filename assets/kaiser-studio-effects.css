@@ -76,3 +76,81 @@ body.ks-page-herbs{--ks-cyan:rgba(116,183,122,.31);--ks-aqua:rgba(201,223,133,.2
 .ks-reveal.ks-pending{opacity:.65;transform:translateY(28px);filter:blur(1px)}
 @media(max-width:700px){.ks-global-spark{width:8px;height:8px}.ks-global-spark:nth-child(4n){width:9px;height:9px}.ks-hero-atmosphere .ks-spark{width:8px;height:8px}}
 @media(prefers-reduced-motion:reduce){.ks-global-particles{display:none!important}.ks-hero-atmosphere *{animation:none!important}}
+
+/* Farbwelten: an die jeweilige App und ihren Hintergrund angepasst.
+   Fuer neue Apps einfach ein eigenes body.ks-page-... Theme definieren. */
+body{
+  --ks-point:#bdfaff;
+  --ks-point-glow:rgba(25,194,219,.68);
+  --ks-point-halo:rgba(18,151,193,.28);
+  --ks-ring:rgba(100,232,241,.48);
+  --ks-ring-glow:rgba(51,209,227,.24);
+  --ks-ambient-1:rgba(25,187,207,.22);
+  --ks-ambient-2:rgba(37,125,190,.18);
+}
+body.ks-page-wealth{
+  --ks-point:#ffdfa1;
+  --ks-point-glow:rgba(236,185,66,.77);
+  --ks-point-halo:rgba(207,145,35,.34);
+  --ks-ring:rgba(243,206,121,.51);
+  --ks-ring-glow:rgba(208,162,64,.24);
+  --ks-ambient-1:rgba(191,156,65,.23);
+  --ks-ambient-2:rgba(41,140,97,.21);
+  --ks-cyan:rgba(245,196,93,.54);
+  --ks-aqua:rgba(140,205,134,.34);
+  --ks-blue:rgba(202,166,80,.38);
+}
+body.ks-page-heart{
+  --ks-point:#ffd8f2;
+  --ks-point-glow:rgba(233,133,196,.78);
+  --ks-point-halo:rgba(182,141,221,.34);
+  --ks-ring:rgba(237,167,212,.52);
+  --ks-ring-glow:rgba(195,148,218,.25);
+  --ks-ambient-1:rgba(227,155,192,.24);
+  --ks-ambient-2:rgba(160,133,213,.19);
+  --ks-cyan:rgba(239,159,203,.54);
+  --ks-aqua:rgba(184,154,238,.37);
+  --ks-blue:rgba(231,180,216,.32);
+}
+body.ks-page-herbs{
+  --ks-point:#d0f7b2;
+  --ks-point-glow:rgba(115,192,100,.77);
+  --ks-point-halo:rgba(71,154,107,.3);
+  --ks-ring:rgba(150,219,139,.55);
+  --ks-ring-glow:rgba(107,184,116,.26);
+  --ks-ambient-1:rgba(117,176,107,.23);
+  --ks-ambient-2:rgba(85,155,113,.20);
+  --ks-cyan:rgba(144,216,130,.51);
+  --ks-aqua:rgba(189,220,118,.36);
+  --ks-blue:rgba(80,165,123,.32);
+}
+body.ks-page-legal{
+  --ks-point-glow:rgba(53,172,183,.40);
+  --ks-point-halo:rgba(44,152,173,.15);
+  --ks-ring:rgba(115,210,223,.24);
+  --ks-ring-glow:rgba(47,164,184,.10);
+  --ks-ambient-1:rgba(36,155,177,.12);
+  --ks-ambient-2:rgba(39,123,179,.09);
+}
+body::before{background:radial-gradient(circle,var(--ks-ambient-1),transparent 69%)}
+body::after{background:radial-gradient(circle,var(--ks-ambient-2),transparent 71%)}
+.ks-global-spark,
+.ks-global-spark:nth-child(3n),
+.ks-global-spark:nth-child(4n){
+  background:var(--ks-point);
+  box-shadow:0 0 12px 3px var(--ks-point-glow),0 0 30px 7px var(--ks-point-halo);
+}
+.ks-hero-atmosphere .ks-arc{
+  border-color:var(--ks-ring);
+  box-shadow:0 0 46px var(--ks-ring-glow),inset 0 0 38px var(--ks-ring-glow);
+}
+.ks-hero-atmosphere .ks-spark{
+  background:var(--ks-point);
+  box-shadow:0 0 18px 5px var(--ks-point-glow);
+}
+/* Auf Produktseiten glimmen die Punkte langsamer als im zentralen Studio. */
+body.ks-page-heart .ks-global-spark{animation-duration:21s}
+body.ks-page-wealth .ks-global-spark{animation-duration:17s}
+body.ks-page-herbs .ks-global-spark{animation-duration:19s}
+body.ks-page-legal .ks-global-spark{opacity:.25;animation-duration:24s}
+@media(prefers-reduced-motion:reduce){.ks-global-particles{display:none!important}}

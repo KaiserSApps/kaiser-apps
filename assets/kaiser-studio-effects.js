@@ -6,6 +6,7 @@
   if(page==="reichtum-manifestieren.html")document.body.classList.add("ks-page-wealth");
   if(page==="herzarchiv.html")document.body.classList.add("ks-page-heart");
   if(page==="heilkraeuter.html")document.body.classList.add("ks-page-herbs");
+  if(["impressum.html","datenschutz.html","reichtum-datenschutz.html"].includes(page))document.body.classList.add("ks-page-legal");
 
   // Globaler, rein dekorativer Partikel-Layer auf jeder Kaiser-Studio-Seite.
   // Keine Elemente überlagern Links oder Buttons.

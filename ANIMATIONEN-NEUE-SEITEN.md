@@ -21,7 +21,7 @@ Die Effekte werden automatisch aktiviert. Die Titelbereiche sollten die CSS-Klas
 erhalten dezente Hover- und Einblendeffekte.
 
 Die CSS- und JS-Dateien sollten auch für spätere Apps wiederverwendet werden.
-Bei Bedarf in der gemeinsamen CSS-Datei die Farbpalette erweitern. Die Einstellung
+Für neue Apps die Farbvariablen als eigenes `body.ks-page-...`-Theme im gemeinsamen CSS definieren und die Klasse im gemeinsamen JS anhand der neuen Dateiadresse setzen. Die Lichtpunkte, Lichtringe und Hintergrundwolken übernehmen dann automatisch die passende Farbpalette. Die Einstellung
 „Bewegung reduzieren“ wird respektiert.
 
 Wichtig: Impressum und Datenschutzhinweise sind aktuell noch Entwürfe und müssen
