@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 235" role="img" aria-labelledby="title desc">
   <title id="title">MachArt</title>
   <desc id="desc">MachArt – Apps mit Ideen. Gemacht für dich.</desc>
-  <text x="12" y="133" font-family="Segoe UI,Arial,sans-serif" font-size="143" font-weight="800" letter-spacing="-7"><tspan fill="#ffffff">Mach</tspan><tspan fill="#09c4cb">Art</tspan></text>
+  <text x="12" y="133" font-family="Segoe UI,Arial,sans-serif" font-size="143" font-weight="800" letter-spacing="-7"><tspan fill="#ffffff">Mach</tspan><tspan dx="-20" fill="#09c4cb">Art</tspan></text>
   <text x="16" y="207" font-family="Segoe UI,Arial,sans-serif" font-size="44" font-weight="500" fill="#d6e7ed">Apps mit Ideen. Gemacht für dich.</text>
 </svg>
