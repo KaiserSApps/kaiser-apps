@@ -1,0 +1,45 @@
+/* Kaiser Studio – gemeinsame Animationen für bestehende und künftige Seiten.
+   Neue HTML-Seiten: dieses Stylesheet und kaizer? Nein: kaiser-studio-effects.js einbinden. */
+:root{--ks-cyan:rgba(15,202,211,.38);--ks-aqua:rgba(60,226,234,.27);--ks-blue:rgba(22,123,190,.26)}
+body{position:relative;isolation:isolate}
+body::before,body::after{content:"";position:fixed;pointer-events:none;z-index:-1;border-radius:50%;will-change:transform}
+body::before{width:43vmax;height:43vmax;min-width:320px;min-height:320px;left:-19vmax;top:14vh;background:radial-gradient(circle,rgba(13,191,201,.12),transparent 68%);animation:ks-ambient-a 19s ease-in-out infinite alternate}
+body::after{width:37vmax;height:37vmax;min-width:260px;min-height:260px;right:-15vmax;bottom:-12vh;background:radial-gradient(circle,rgba(43,147,196,.12),transparent 70%);animation:ks-ambient-b 23s ease-in-out infinite alternate}
+header,main,footer{position:relative;z-index:1}
+header{transition:box-shadow .45s ease}
+header:hover{box-shadow:0 8px 33px rgba(7,103,130,.19)}
+.studio-brand img{transition:filter .35s ease,transform .35s ease;transform-origin:left center}
+.studio-brand:hover img{filter:drop-shadow(0 0 10px rgba(45,224,230,.46));transform:translateY(-1px)}
+/* Die Lichtwelt wird im Hero als rein dekorative Ebene ergänzt. */
+.ks-hero-atmosphere{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0;isolation:isolate}
+.ks-hero-atmosphere .ks-orb{position:absolute;border-radius:50%;filter:blur(33px);background:radial-gradient(circle,var(--ks-cyan),transparent 67%);opacity:.72;animation:ks-orbit 12s ease-in-out infinite alternate}
+.ks-hero-atmosphere .ks-orb:nth-child(1){width:370px;height:370px;top:-110px;right:3%}
+.ks-hero-atmosphere .ks-orb:nth-child(2){width:310px;height:310px;bottom:-140px;left:17%;animation-delay:-6s;animation-duration:16s;background:radial-gradient(circle,var(--ks-blue),transparent 69%)}
+.ks-hero-atmosphere .ks-orb:nth-child(3){width:200px;height:200px;top:30%;right:35%;animation-delay:-10s;background:radial-gradient(circle,var(--ks-aqua),transparent 71%)}
+.ks-hero-atmosphere .ks-arc{position:absolute;width:clamp(190px,34vw,480px);aspect-ratio:1;border-radius:50%;border:1px solid rgba(120,232,240,.23);box-shadow:0 0 38px rgba(42,206,221,.12),inset 0 0 35px rgba(42,206,221,.09);right:-9%;top:13%;animation:ks-pulse 7s ease-in-out infinite}
+.ks-hero-atmosphere .ks-arc:nth-of-type(5){width:clamp(120px,22vw,315px);right:0;top:23%;animation-delay:-3s}
+.ks-hero-atmosphere .ks-spark{position:absolute;bottom:-10px;width:4px;height:4px;border-radius:50%;background:#b6f7ff;box-shadow:0 0 14px 3px rgba(50,218,233,.44);opacity:0;animation:ks-rise 12s linear infinite}
+.ks-hero-atmosphere .ks-spark:nth-last-child(1){left:17%;animation-delay:-2s}
+.ks-hero-atmosphere .ks-spark:nth-last-child(2){left:42%;animation-delay:-8s;animation-duration:16s}
+.ks-hero-atmosphere .ks-spark:nth-last-child(3){left:69%;animation-delay:-5s;animation-duration:14s}
+.ks-hero-atmosphere .ks-spark:nth-last-child(4){left:89%;animation-delay:-11s;animation-duration:17s}
+.hero,.top{isolation:isolate}
+.hero > :not(.ks-hero-atmosphere):not(.hero-lights),.top > :not(.ks-hero-atmosphere){position:relative;z-index:1}
+/* Individuelle Farbwelten der App-Unterseiten bleiben erhalten. */
+body.ks-page-wealth{--ks-cyan:rgba(229,192,105,.31);--ks-aqua:rgba(118,201,145,.24);--ks-blue:rgba(197,157,75,.17)}
+body.ks-page-heart{--ks-cyan:rgba(235,153,185,.30);--ks-aqua:rgba(192,168,236,.23);--ks-blue:rgba(225,178,206,.18)}
+body.ks-page-herbs{--ks-cyan:rgba(116,183,122,.31);--ks-aqua:rgba(201,223,133,.21);--ks-blue:rgba(77,151,118,.16)}
+/* Inhalte beim Scrollen leicht hervorheben – kein dauerhaftes Verstecken. */
+.ks-reveal{transition:opacity .85s ease,transform .85s cubic-bezier(.2,.8,.25,1),filter .85s ease}
+.ks-reveal.ks-pending{opacity:.45;transform:translateY(23px);filter:blur(2px)}
+.ks-reveal.ks-visible{opacity:1;transform:translateY(0);filter:blur(0)}
+/* Interaktive Flächen: leichte Bewegung, keine Layoutsprünge. */
+.app,.card,.feature,.features>div,.btn,.button,.pill{transition:transform .28s ease,box-shadow .28s ease,filter .28s ease,border-color .28s ease}
+@media(hover:hover) and (pointer:fine){.app:hover,.card:hover,.feature:hover,.features>div:hover{transform:translateY(-5px);box-shadow:0 20px 46px rgba(5,36,52,.13)}.btn:hover,.button:hover{transform:translateY(-3px);filter:brightness(1.06)}}
+@keyframes ks-ambient-a{from{transform:translate3d(-4vw,-2vh,0) scale(.94)}to{transform:translate3d(12vw,9vh,0) scale(1.15)}}
+@keyframes ks-ambient-b{from{transform:translate3d(5vw,3vh,0) scale(.95)}to{transform:translate3d(-12vw,-10vh,0) scale(1.12)}}
+@keyframes ks-orbit{from{transform:translate3d(-30px,10px,0) scale(.91)}to{transform:translate3d(46px,-27px,0) scale(1.17)}}
+@keyframes ks-pulse{0%,100%{transform:scale(.94);opacity:.24}50%{transform:scale(1.09);opacity:.87}}
+@keyframes ks-rise{0%{transform:translate3d(0,0,0);opacity:0}17%{opacity:.7}80%{opacity:.35}100%{transform:translate3d(50px,-320px,0);opacity:0}}
+@media(max-width:700px){.ks-hero-atmosphere .ks-arc{right:-32%}.ks-hero-atmosphere .ks-orb{filter:blur(40px)}}
+@media(prefers-reduced-motion:reduce){body::before,body::after,.ks-hero-atmosphere *{animation:none!important}.ks-reveal{opacity:1!important;filter:none!important;transform:none!important;transition:none!important}.app,.card,.feature,.btn,.button,.pill,.studio-brand img{transition:none!important}}
