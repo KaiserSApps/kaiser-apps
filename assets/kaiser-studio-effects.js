@@ -8,20 +8,24 @@
   if(page==="heilkraeuter.html")document.body.classList.add("ks-page-herbs");
   if(["impressum.html","datenschutz.html","reichtum-datenschutz.html"].includes(page))document.body.classList.add("ks-page-legal");
 
-  // Globaler, rein dekorativer Partikel-Layer auf jeder Kaiser-Studio-Seite.
-  // Keine Elemente überlagern Links oder Buttons.
-  var globalParticles=document.createElement("div");
-  globalParticles.className="ks-global-particles";
-  globalParticles.setAttribute("aria-hidden","true");
-  for(var i=0;i<16;i++)globalParticles.appendChild(document.createElement("span")).className="ks-global-spark";
-  document.body.prepend(globalParticles);
-
+  // Aufsteigende Blasen bleiben innerhalb des farbigen Titelbereichs.
   var hero=document.querySelector(".hero, .top");
   if(hero){
     var atmosphere=document.createElement("div");
     atmosphere.className="ks-hero-atmosphere";
     atmosphere.setAttribute("aria-hidden","true");
-    atmosphere.innerHTML='<span class="ks-orb"></span><span class="ks-orb"></span><span class="ks-orb"></span><span class="ks-arc"></span><span class="ks-arc"></span><span class="ks-spark"></span><span class="ks-spark"></span><span class="ks-spark"></span><span class="ks-spark"></span>';
+    for(var i=0;i<3;i++)atmosphere.appendChild(document.createElement("span")).className="ks-orb";
+    for(var j=0;j<2;j++)atmosphere.appendChild(document.createElement("span")).className="ks-arc";
+    for(var k=0;k<16;k++){
+      var spark=document.createElement("span");
+      spark.className="ks-spark";
+      spark.style.left=(5+(k*37)%91)+"%";
+      spark.style.animationDuration=(7+(k%5)*1.7)+"s";
+      spark.style.animationDelay=(-1-k*.81)+"s";
+      spark.style.width=(k%5===0?11:k%3===0?7:9)+"px";
+      spark.style.height=spark.style.width;
+      atmosphere.appendChild(spark);
+    }
     hero.prepend(atmosphere);
   }
 

@@ -154,3 +154,29 @@ body.ks-page-wealth .ks-global-spark{animation-duration:17s}
 body.ks-page-herbs .ks-global-spark{animation-duration:19s}
 body.ks-page-legal .ks-global-spark{opacity:.25;animation-duration:24s}
 @media(prefers-reduced-motion:reduce){.ks-global-particles{display:none!important}}
+
+/* Blasen nur im farbigen Titelbereich; kein globales Schweben über Text und Karten. */
+.ks-global-particles{display:none!important}
+.hero,.top{position:relative;overflow:hidden;isolation:isolate}
+.ks-hero-atmosphere{position:absolute;inset:0;overflow:hidden;z-index:0;pointer-events:none}
+.ks-hero-atmosphere .ks-spark{
+  bottom:-16px;
+  background:var(--ks-point);
+  box-shadow:0 0 12px 3px var(--ks-point-glow),0 0 24px 6px var(--ks-point-halo);
+  animation-name:ks-rise-in-hero;
+  animation-timing-function:linear;
+  animation-iteration-count:infinite;
+  opacity:0;
+}
+@keyframes ks-rise-in-hero{
+  0%{transform:translate3d(0,0,0) scale(.7);opacity:0}
+  12%{opacity:.84}
+  76%{opacity:.62}
+  100%{transform:translate3d(28px,-520px,0) scale(1.13);opacity:0}
+}
+@media(max-width:700px){
+  .ks-hero-atmosphere .ks-spark{box-shadow:0 0 11px 3px var(--ks-point-glow)}
+}
+@media(prefers-reduced-motion:reduce){
+  .ks-hero-atmosphere .ks-spark{animation:none!important;opacity:0!important}
+}

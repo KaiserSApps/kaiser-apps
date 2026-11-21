@@ -16,7 +16,8 @@ Unmittelbar vor `</body>` ergänzen:
 <script defer src="assets/kaiser-studio-effects.js"></script>
 ```
 
-Die Effekte werden automatisch aktiviert. Die Titelbereiche sollten die CSS-Klasse
+Die Effekte werden automatisch aktiviert. Die aufsteigenden Lichtblasen bleiben ausschließlich
+im farbigen Titelbereich und überdecken keine Inhaltsabschnitte. Die Titelbereiche sollten die CSS-Klasse
 `.hero` oder `.top` verwenden. App-Karten mit `.app`, `.card` oder `.feature`
 erhalten dezente Hover- und Einblendeffekte.
 
