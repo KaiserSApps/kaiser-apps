@@ -1,0 +1,32 @@
+/* MachArt: interaktive App-Karten – nur auf der Startseite */
+.apps .app{
+  --mx:50%;--my:50%;
+  position:relative;isolation:isolate;overflow:hidden;
+  transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s ease,background .35s ease,border-color .35s ease,color .35s ease;
+}
+.apps .app::before{
+  content:"";position:absolute;inset:-1px;z-index:0;pointer-events:none;
+  background:radial-gradient(390px circle at var(--mx) var(--my),rgba(62,225,226,.31),rgba(19,114,142,.12) 42%,transparent 77%);
+  opacity:0;transition:opacity .32s ease;
+}
+.apps .app > *{position:relative;z-index:1}
+.apps .app::after{
+  content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;z-index:2;
+  border:1px solid rgba(85,234,231,0);box-shadow:inset 0 0 25px rgba(0,212,214,0);
+  transition:border-color .35s ease,box-shadow .35s ease;
+}
+@media(hover:hover) and (pointer:fine){
+  .apps .app:hover{transform:translateY(-9px);background:linear-gradient(150deg,#09283d,#06192b 78%);border-color:#20bfc3;box-shadow:0 24px 50px rgba(2,28,46,.25),0 0 0 1px rgba(12,201,203,.24)}
+  .apps .app:hover::before{opacity:1}
+  .apps .app:hover::after{border-color:rgba(88,227,225,.65);box-shadow:inset 0 0 25px rgba(0,212,214,.1)}
+  .apps .app:hover h3,.apps .app:hover p,.apps .app:hover .price{color:#f2fbfc}
+  .apps .app:hover .tag,.apps .app:hover a{color:#65e8e4}
+  .apps .app:hover a{transform:translateX(3px)}
+}
+.apps .app a{width:fit-content;transition:color .25s ease,transform .25s ease}
+.apps .app:focus-within{outline:2px solid #0bbdc2;outline-offset:4px;box-shadow:0 18px 46px rgba(2,28,46,.22)}
+@media(hover:none){.apps .app:active{transform:scale(.985);border-color:#10bdc5;box-shadow:0 12px 36px rgba(2,43,64,.18)}}
+@media(prefers-reduced-motion:reduce){
+  .apps .app,.apps .app::before,.apps .app::after,.apps .app a{transition:none!important}
+  .apps .app:hover,.apps .app:active{transform:none!important}
+}
