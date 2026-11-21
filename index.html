@@ -58,11 +58,11 @@ footer{background:var(--navy);color:#e0edf5;padding:28px 6%;display:flex;justify
 .hero-lights .light-ring{position:absolute;display:block;right:-175px;top:9%;width:530px;height:530px;border:1px solid rgba(71,231,236,.22);border-radius:50%;box-shadow:0 0 70px rgba(41,220,235,.10),inset 0 0 70px rgba(41,220,235,.06);animation:studio-pulse 7s ease-in-out infinite}
 .hero-lights .ring-2{right:-75px;top:22%;width:320px;height:320px;border-color:rgba(91,234,237,.23);animation-delay:-3s}
 @keyframes studio-pulse{0%,100%{transform:scale(.97);opacity:.27}50%{transform:scale(1.07);opacity:.95}}
-.hero-app-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:39px;max-width:1050px}
-.hero-app-links a{display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(115,229,239,.35);border-radius:12px;background:rgba(4,36,58,.58);padding:12px 15px;color:#e5fcff;text-decoration:none;font-size:14px;font-weight:700;backdrop-filter:blur(5px);transition:background .2s,transform .2s}
-.hero-app-links a:hover,.hero-app-links a:focus-visible{background:rgba(8,123,140,.63);transform:translateY(-2px)}
+.hero-app-links{display:flex;flex-wrap:wrap;gap:24px;margin-top:39px;max-width:1050px;min-height:47px;align-items:center}
+.hero-app-links a{display:inline-flex;align-items:center;gap:10px;border:0;background:transparent;padding:12px 0;color:#e5fcff;text-decoration:none;font-size:14px;font-weight:700;transition:color .2s,transform .2s}
+.hero-app-links a:hover,.hero-app-links a:focus-visible{color:#70eee8;transform:translateY(-2px)}
 .hero-app-links span{color:#60dce0;font-size:12px;letter-spacing:.08em}
-@media(max-width:700px){.hero-lights .light-ring{right:-320px}.hero-app-links{margin-top:29px}.hero-app-links a{width:100%;justify-content:flex-start}}
+@media(max-width:700px){.hero-lights .light-ring{right:-320px}.hero-app-links{margin-top:29px;gap:0;min-height:141px;align-content:center}.hero-app-links a{width:100%;justify-content:flex-start}}
 @media(prefers-reduced-motion:reduce){.hero-lights .light-ring{animation:none!important}.hero-app-links a{transition:none}}
 </style><link rel="stylesheet" href="assets/kaiser-studio-effects.css"><link rel="stylesheet" href="assets/machart-interactions.css"></head>
 <body>
