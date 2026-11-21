@@ -7,6 +7,14 @@
   if(page==="herzarchiv.html")document.body.classList.add("ks-page-heart");
   if(page==="heilkraeuter.html")document.body.classList.add("ks-page-herbs");
 
+  // Globaler, rein dekorativer Partikel-Layer auf jeder Kaiser-Studio-Seite.
+  // Keine Elemente überlagern Links oder Buttons.
+  var globalParticles=document.createElement("div");
+  globalParticles.className="ks-global-particles";
+  globalParticles.setAttribute("aria-hidden","true");
+  for(var i=0;i<9;i++)globalParticles.appendChild(document.createElement("span")).className="ks-global-spark";
+  document.body.prepend(globalParticles);
+
   var hero=document.querySelector(".hero, .top");
   if(hero){
     var atmosphere=document.createElement("div");

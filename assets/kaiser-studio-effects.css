@@ -18,7 +18,7 @@ header:hover{box-shadow:0 8px 33px rgba(7,103,130,.19)}
 .ks-hero-atmosphere .ks-orb:nth-child(3){width:200px;height:200px;top:30%;right:35%;animation-delay:-10s;background:radial-gradient(circle,var(--ks-aqua),transparent 71%)}
 .ks-hero-atmosphere .ks-arc{position:absolute;width:clamp(190px,34vw,480px);aspect-ratio:1;border-radius:50%;border:1px solid rgba(120,232,240,.23);box-shadow:0 0 38px rgba(42,206,221,.12),inset 0 0 35px rgba(42,206,221,.09);right:-9%;top:13%;animation:ks-pulse 7s ease-in-out infinite}
 .ks-hero-atmosphere .ks-arc:nth-of-type(5){width:clamp(120px,22vw,315px);right:0;top:23%;animation-delay:-3s}
-.ks-hero-atmosphere .ks-spark{position:absolute;bottom:-10px;width:4px;height:4px;border-radius:50%;background:#b6f7ff;box-shadow:0 0 14px 3px rgba(50,218,233,.44);opacity:0;animation:ks-rise 12s linear infinite}
+.ks-hero-atmosphere .ks-spark{position:absolute;bottom:-10px;width:7px;height:7px;border-radius:50%;background:#c8fbff;box-shadow:0 0 18px 4px rgba(50,218,233,.52);opacity:0;animation:ks-rise 12s linear infinite}
 .ks-hero-atmosphere .ks-spark:nth-last-child(1){left:17%;animation-delay:-2s}
 .ks-hero-atmosphere .ks-spark:nth-last-child(2){left:42%;animation-delay:-8s;animation-duration:16s}
 .ks-hero-atmosphere .ks-spark:nth-last-child(3){left:69%;animation-delay:-5s;animation-duration:14s}
@@ -41,5 +41,18 @@ body.ks-page-herbs{--ks-cyan:rgba(116,183,122,.31);--ks-aqua:rgba(201,223,133,.2
 @keyframes ks-orbit{from{transform:translate3d(-30px,10px,0) scale(.91)}to{transform:translate3d(46px,-27px,0) scale(1.17)}}
 @keyframes ks-pulse{0%,100%{transform:scale(.94);opacity:.24}50%{transform:scale(1.09);opacity:.87}}
 @keyframes ks-rise{0%{transform:translate3d(0,0,0);opacity:0}17%{opacity:.7}80%{opacity:.35}100%{transform:translate3d(50px,-320px,0);opacity:0}}
-@media(max-width:700px){.ks-hero-atmosphere .ks-arc{right:-32%}.ks-hero-atmosphere .ks-orb{filter:blur(40px)}}
-@media(prefers-reduced-motion:reduce){body::before,body::after,.ks-hero-atmosphere *{animation:none!important}.ks-reveal{opacity:1!important;filter:none!important;transform:none!important;transition:none!important}.app,.card,.feature,.btn,.button,.pill,.studio-brand img{transition:none!important}}
+/* Auf jeder Seite sichtbare aufsteigende Punkte, auch auf Mobilgeräten. */
+.ks-global-particles{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:0;isolation:isolate}
+.ks-global-spark{position:absolute;bottom:-20px;display:block;width:7px;height:7px;border-radius:50%;background:#c8fbff;box-shadow:0 0 14px 3px rgba(39,188,204,.42);opacity:0;animation:ks-global-rise linear infinite}
+.ks-global-spark:nth-child(1){left:5%;animation-duration:16s;animation-delay:-1s}
+.ks-global-spark:nth-child(2){left:14%;animation-duration:20s;animation-delay:-11s}
+.ks-global-spark:nth-child(3){left:24%;animation-duration:17s;animation-delay:-7s}
+.ks-global-spark:nth-child(4){left:35%;animation-duration:22s;animation-delay:-17s}
+.ks-global-spark:nth-child(5){left:47%;animation-duration:18s;animation-delay:-4s}
+.ks-global-spark:nth-child(6){left:60%;animation-duration:21s;animation-delay:-14s}
+.ks-global-spark:nth-child(7){left:72%;animation-duration:19s;animation-delay:-9s}
+.ks-global-spark:nth-child(8){left:83%;animation-duration:23s;animation-delay:-19s}
+.ks-global-spark:nth-child(9){left:93%;animation-duration:17s;animation-delay:-13s}
+@keyframes ks-global-rise{0%{transform:translate3d(0,0,0) scale(.75);opacity:0}12%{opacity:.74}78%{opacity:.46}100%{transform:translate3d(30px,-110vh,0) scale(1.06);opacity:0}}
+@media(max-width:700px){.ks-hero-atmosphere .ks-arc{right:-32%}.ks-hero-atmosphere .ks-orb{filter:blur(40px)}.ks-global-spark{width:7px;height:7px;box-shadow:0 0 14px 3px rgba(39,188,204,.42)}}
+@media(prefers-reduced-motion:reduce){body::before,body::after,.ks-hero-atmosphere *,.ks-global-spark{animation:none!important}.ks-global-particles{display:none!important}.ks-reveal{opacity:1!important;filter:none!important;transform:none!important;transition:none!important}.app,.card,.feature,.btn,.button,.pill,.studio-brand img{transition:none!important}}
