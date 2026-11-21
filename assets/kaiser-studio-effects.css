@@ -180,3 +180,20 @@ body.ks-page-legal .ks-global-spark{opacity:.25;animation-duration:24s}
 @media(prefers-reduced-motion:reduce){
   .ks-hero-atmosphere .ks-spark{animation:none!important;opacity:0!important}
 }
+
+/* Ebene 0: Lichtblasen. Ebene 2: Texte, Buttons und App-Bilder. */
+.hero,.top{isolation:isolate;position:relative}
+.hero > .ks-hero-atmosphere,.top > .ks-hero-atmosphere{z-index:0!important}
+.hero > .hero-lights{z-index:0!important}
+.hero > .hero-inner,.hero > div:not(.ks-hero-atmosphere):not(.hero-lights),
+.hero > section:not(.ks-hero-atmosphere),
+.top > .top-inner,.top > div:not(.ks-hero-atmosphere){
+  position:relative;
+  z-index:2!important;
+}
+.hero .hero-icon,.hero .hero-img,.hero .pill,.hero h1,.hero p,.hero .lead{
+  position:relative;
+  z-index:2;
+}
+header{position:relative;z-index:5}
+header .studio-brand,header .studio-brand img{position:relative;z-index:6}
