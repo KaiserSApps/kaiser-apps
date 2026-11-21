@@ -12,7 +12,7 @@
   var globalParticles=document.createElement("div");
   globalParticles.className="ks-global-particles";
   globalParticles.setAttribute("aria-hidden","true");
-  for(var i=0;i<9;i++)globalParticles.appendChild(document.createElement("span")).className="ks-global-spark";
+  for(var i=0;i<16;i++)globalParticles.appendChild(document.createElement("span")).className="ks-global-spark";
   document.body.prepend(globalParticles);
 
   var hero=document.querySelector(".hero, .top");
