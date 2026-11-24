@@ -27,3 +27,6 @@ Für neue Apps die Farbvariablen als eigenes `body.ks-page-...`-Theme im gemeins
 
 Wichtig: Impressum und Datenschutzhinweise sind aktuell noch Entwürfe und müssen
 vor einer regulären geschäftlichen Veröffentlichung vervollständigt werden.
+
+## App-Uebersichten
+Neue App-Kacheln auf Startseite und App-Uebersicht standardmaessig ohne App-Logo gestalten, ausser ausdruecklich anders gewuenscht. Jede App erhaelt einen individuellen sanften Farbverlauf ins Weisse. App-Logos auf Detailseiten bleiben erlaubt.
